@@ -71,8 +71,10 @@ if __name__ == '__main__':
     # Iterate over all the articles and print out article, article number and link
     # Content[0] = index, Content[1] = article tags and attributes
     for content in enumerate(contents):
-        print(get_time_list(article_time)[content[0]] + " #" + str(content[0] + 1) + " " + content[1].get_text().strip() + ".")
+        print(get_time_list(article_time)[content[0]] + " #" + str(content[0] + 1) + " " +
+              content[1].get_text().strip() + ".")
         print(content[1].get('href'))
+
         # Print a newline except if the last article has already been printed
         if content[0] != 6:
             print("\n")
