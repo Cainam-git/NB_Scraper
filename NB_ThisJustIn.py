@@ -1,7 +1,7 @@
 # Imports
 import datetime
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
 
 
 def print_layout():
@@ -47,9 +47,9 @@ def get_current_time():
     difference_time_formatted = '{:02}:{:02}'.format(int(difference_hours), int(difference_minutes))
 
     # Print out current time, the (time of the) last update and the difference in minutes
-    print("Current time:\t\t\t\t" + current_date_time.strftime("%H:%M"))
-    print("Last update:\t\t\t\t" + last_update_time.strftime("%H:%M"))
-    print("Time since last article:\t" + difference_time_formatted)
+    print("Current time:             " + current_date_time.strftime("%H:%M"))
+    print("Last update:              " + last_update_time.strftime("%H:%M"))
+    print("Time since last article:  " + difference_time_formatted)
 
 
 if __name__ == '__main__':
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     # Iterate over all the articles and print out article, article number and link
     # Content[0] = index, Content[1] = article tags and attributes
     for content in enumerate(contents):
-        print(get_time_list(article_time)[content[0]] + " #" + str(content[0] + 1) + " " +
+        print("#" + str(content[0] + 1) + " - " + get_time_list(article_time)[content[0]] + " - " +
               content[1].get_text().strip() + ".")
         print(content[1].get('href'))
 
